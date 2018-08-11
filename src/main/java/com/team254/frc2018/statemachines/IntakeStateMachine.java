@@ -47,7 +47,10 @@ public class IntakeStateMachine {
     }
 
     public synchronized void setWantedPower(double power) {
-        mWantedPower = Math.max(0.1, power);
+        if(power > 0.0)
+            mWantedPower = power;
+        else
+            mWantedPower = Math.min(-0.1, power);
     }
 
     public IntakeState update(double timestamp, WantedAction wantedAction, IntakeState currentState) {
