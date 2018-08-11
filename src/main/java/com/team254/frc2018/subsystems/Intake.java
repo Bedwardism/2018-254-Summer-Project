@@ -143,11 +143,13 @@ public class Intake extends Subsystem {
     }
 
     public synchronized boolean hasCube() {
-        return getLeftBannerSensor() || getRightBannerSensor();
+        return false;
+        //return getLeftBannerSensor() || getRightBannerSensor();
     }
 
     public synchronized boolean definitelyHasCube() {
-        return getLeftBannerSensor() && getRightBannerSensor();
+        return false;
+       //return getLeftBannerSensor() && getRightBannerSensor();
     }
 
     private boolean getLeftBannerSensor() {
