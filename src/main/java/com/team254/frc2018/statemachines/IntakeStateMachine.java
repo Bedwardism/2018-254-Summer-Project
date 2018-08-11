@@ -50,7 +50,7 @@ public class IntakeStateMachine {
         if(power > 0.0)
             mWantedPower = power;
         else
-            mWantedPower = Math.min(-0.1, power);
+            mWantedPower = Math.min(-0.25, power);
     }
 
     public IntakeState update(double timestamp, WantedAction wantedAction, IntakeState currentState) {
