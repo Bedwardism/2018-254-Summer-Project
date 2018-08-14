@@ -22,7 +22,10 @@ public class IntakeState {
     public TimedLEDState ledState = TimedLEDState.StaticLEDState.kStaticOff;
 
     public void setPower(double power) {
-        leftMotor = rightMotor = power;
+        if(power > 0.0)
+            leftMotor = rightMotor = power;
+        else
+           leftMotor = rightMotor = Math.min(-0.35, power);
     }
 
     public boolean seesCube() {
